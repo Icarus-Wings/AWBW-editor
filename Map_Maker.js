@@ -18,22 +18,20 @@ function createDiv(xAxis, yAxis) {
 		
 	var tile = document.createElement('div');
 	tile.id = "x"+xAxis+"y"+yAxis;
-	tile.style.position='absolute';
-	tile.style.top = 700+'px';
-	
-	document.body.appendChild(tile);
+	//tile.style.position='absolute';
+	//tile.style.top = 700+'px';
+	var canvasElement = document.getElementById('mapCanvas')
+	canvasElement.appendChild(tile);
 }
 
-function createMap(width, height){
+function createMap(widthID, heightID){
 	
+	var width = document.getElementById(widthID).value-1;
+	var height = document.getElementById(heightID).value-1;
+
+
 	if (width > 50 || 50 < height){
 	alert("you can't make a map greater than 50x50");
-	}
-	else if (document.getElementById('our').value.toLowerCase() == 'our' && document.getElementById('house').value.toLowerCase() == 'house'){
-		document.getElementById('video').innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/k55FYtqtXXU" frameborder="0" allowfullscreen></iframe>'
-		document.bgColor = 'black';
-		document.title = 'OUR HOUSE'
-		document.getElementById("hot").style.color = "white";
 	}
 	else {
 		
